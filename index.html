@@ -61,7 +61,7 @@ a{color:#7a5c00}
 <div class="card">
 <ul class="tight">
 <li><strong>99 קבצי SVG מקוריים</strong> מתוך ארכיון הגרפיקות של האפליקציה — כולם מוצגים למטה וזמינים כקבצים נפרדים בריפו.</li>
-<li><strong>9 צילומי מסך</strong> מהאפליקציה (פרטים אישיים הושמטו) שמראים איך האלמנטים משתלבים בפועל.</li>
+<li><strong>14 צילומי מסך</strong> מהאפליקציה (פרטים אישיים הושמטו) ו<strong>סרטון קצר</strong> של הברקת הגביעים — שמראים איך האלמנטים משתלבים בפועל.</li>
 <li><strong>פלטת צבעים</strong> שנמדדה מהקבצים ומהצילומים.</li>
 </ul>
 <p class="note">הורדה של כל הקבצים בבת אחת: <a href="https://github.com/taamim-audio/design-language/archive/refs/heads/main.zip">ZIP של הריפו</a> (כולל תיקיית <code class="inline">assets/svg/</code>).</p>
@@ -86,6 +86,22 @@ a{color:#7a5c00}
 <li><strong>תגי הישגים משושים.</strong> משושים צורחים עם מנעול (נעול) או גביע זהב (הושג) ותווית מתחת.</li>
 <li><strong>פס עליון קרמי עם אייקוני זהב.</strong> רקע בהיר <code class="inline">#F2F1F7</code>, אייקוני קו בזהב (הגדרות, מיקרופון, מכתב), ולוגו "טעמי״ם" זהב.</li>
 </ul>
+</div>
+</section>
+
+<section id="rewards">
+<h2>שפת התגמול: סוכריות וגביעים <span class="obs">נצפה באפליקציה</span></h2>
+<div class="card">
+<ul class="tight">
+<li><strong>סוכריה = מטבע הניקוד.</strong> התלמיד צובר סוכריות על הצלחות בתרגול; מונה הסוכריות מופיע כגלולת זהב עם אייקון סוכריה בראש מסך הפרופיל/ההגדרות.</li>
+<li><strong>הסוכריות לא רק אייקון — הן מאוד צבעוניות.</strong> בארכיון קיים האייקון הסטטי הצורח (<code class="inline">CandyIcon.svg</code>), אבל הסוכריות שקופצות על המסך מופיעות בכל פעם בצבע אחר: אדום, סגול, כחול, כתום, צהוב. זה חלק מכוון משפת התגמול, כפי שהסביר ואישר בעל האפליקציה.</li>
+<li><strong>משוב מיידי על תשובה נכונה.</strong> במשחקי התרגול קופצת גלולת "+1" עם סוכריה ליד כפתור התשובה הנכונה, וסוכריה צבעונית נוחתת על הכפתור עצמו.</li>
+<li><strong>סוכריות גם סתם לכיף.</strong> לחיצה על מונה הסוכריות בפרופיל מפיצה סוכריות צבעוניות על המסך — קישוט שובב לשם היופי, לא בהכרח פרס על הישג חדש.</li>
+<li><strong>גביעים = דרגות הישג.</strong> שורת חמישה משושים צורחים עם דרגות בעלות שם (מימין לשמאל: טעמים זה קליל ← קטן עליי פסוקים ← מאסטר בעליות ← אלוף ההפטרה ← בעל קורא). דרגה נעולה מציגה מנעול; דרגה שהושגה מציגה גביע זהב.</li>
+<li><strong>הגביעים "מבריקים".</strong> הגביע אינו אייקון זהב שטוח — פס נוצץ עובר עליו באנימציה חוזרת (ראו את הסרטון המוגדל בסעיף צילומי המסך). מאפיין שהודגש ואושר על ידי בעל האפליקציה.</li>
+<li><strong>חלונית שדרוג דרגה.</strong> כשגביע משתדרג קופצת חלונית זהב-בהירה ("אלוף! ... שודרג לדרגת זהב! הישג מדהים!") עם המשושה והגביע במרכז וכפתור ראשי צורח — אותו נוסח של חלונית הפעולה הצהבהרה המתועדת למעלה.</li>
+</ul>
+<p class="note">גרפיקת הגביע, אנימציית ההברקה והסוכריות הצבעוניות אינן בארכיון ה-SVG — הן מתועדות כאן מצילומי מסך ומסרטון שסיפק בעל האפליקציה.</p>
 </div>
 </section>
 
@@ -127,6 +143,12 @@ a{color:#7a5c00}
 <figure><img src="assets/screens/teacher-modal.jpg" alt="חלונית מורה"><figcaption><strong>חלונית פעולה:</strong> צהבהר, כפתור ראשי צורח מלא, כפתור משני במתאר עם טקסט סגול. (שם המורה הושמט.)</figcaption></figure>
 <figure><img src="assets/screens/nusach-modal.jpg" alt="בחירת נוסח"><figcaption><strong>חלונית בחירה:</strong> לילך, שדה חיפוש שמנת, רשימה עם קווי הפרדה דקים.</figcaption></figure>
 <figure><img src="assets/screens/feedback-annotation.jpg" alt="הערה על פסוק"><figcaption><strong>משוב על הקלטה:</strong> מילים עם הערה מסומנות בכתם כחלחל, חלונית צהבהרה קטנה, נגן עם דילוגים של 10 שניות.</figcaption></figure>
+<figure><img loading="lazy" src="assets/screens/rewards-candy-plus-one.jpg" alt="משוב סוכריה על תשובה נכונה"><figcaption><strong>תגמול על תשובה נכונה:</strong> גלולת "+1" עם סוכריה קופצת ליד התשובה הנכונה במשחק התרגול, וסוכריה מופיעה על הכפתור.</figcaption></figure>
+<figure><img loading="lazy" src="assets/screens/rewards-candy-colors.jpg" alt="סוכריה צבעונית במשחק"><figcaption><strong>סוכריה צבעונית:</strong> סוכריה סגולה נוחתת על תשובה נכונה — בכל פעם צבע אחר.</figcaption></figure>
+<figure><img loading="lazy" src="assets/screens/rewards-profile-trophies.jpg" alt="תגי גביעים בפרופיל"><figcaption><strong>שורת הגביעים בפרופיל (פרטים אישיים הושמטו):</strong> חמישה משושים — שלושה נעולים עם מנעול, שניים עם גביע זהב שהושג. מונה הסוכריות בגלולת הזהב משמאל.</figcaption></figure>
+<figure><img loading="lazy" src="assets/screens/rewards-profile-candies.jpg" alt="סוכריות קופצות בפרופיל"><figcaption><strong>סוכריות סתם לכיף (פרטים אישיים הושמטו):</strong> לחיצה על מונה הסוכריות מפיצה סוכריות צבעוניות על המסך — קישוט שובב, לא בהכרח פרס.</figcaption></figure>
+<figure><img loading="lazy" src="assets/screens/rewards-upgrade-modal.jpg" alt="חלונית שדרוג דרגה"><figcaption><strong>חלונית שדרוג דרגה:</strong> "אלוף! הגביע 'טעמים זה קליל' שודרג לדרגת זהב! הישג מדהים!" — חלונית זהב-בהירה, משושה מרכזי עם גביע, כפתור ראשי צורח.</figcaption></figure>
+<figure><video controls loop muted playsinline preload="metadata" src="assets/screens/trophy-shine.mp4" style="max-width:100%;border-radius:10px"></video><figcaption><strong>הברקת הגביעים (סרטון מוגדל):</strong> פס נוצץ עובר על הגביעים שהושגו — "הגביעים מבריקים", אנימציה ולא גרפיקה שטוחה.</figcaption></figure>
 </div>
 </section>
 
@@ -282,7 +304,7 @@ a{color:#7a5c00}
 <li>המבנה בריפו: <code class="inline">assets/svg/</code> (הגרפיקות), <code class="inline">assets/screens/</code> (הצילומים), <code class="inline">index.html</code> (עמוד זה).</li>
 <li>שמות הקבצים מקוריים וכוללים גרש בודד (למשל <code class="inline">P'sikBox.svg</code>) — בקישורי HTML יש לקודד אותו כ-<code class="inline">%27</code>.</li>
 <li>חלק מה-SVG נחתכו במקור ב-clipPath פנימי; הם מוצגים תקין כ-<code class="inline">&lt;img&gt;</code>, אבל לעריכה וקטורית כדאי לפתוח בעורך.</li>
-<li>מה שלא קיים בארכיון: קובצי הגופן עצמם (השמות ידועים — ראו סעיף הטיפוגרפיה), קובץ לוגו נפרד (הלוגו כאן הוא חיתוך מצילום מסך), וגרפיקת היד/מנחה — אין להמציא אותם.</li>
+<li>מה שלא קיים בארכיון: קובצי הגופן עצמם (השמות ידועים — ראו סעיף הטיפוגרפיה), קובץ לוגו נפרד (הלוגו כאן הוא חיתוך מצילום מסך), גרפיקת היד/מנחה, וגרפיקת הגביע והסוכריות הצבעוניות (מתועדות רק בצילומים ובסרטון, ראו סעיף התגמול) — אין להמציא אותם.</li>
 </ul>
 </div>
 </section>
