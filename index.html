@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>שפת העיצוב של טעמים — מקור לבניית דף נחיתה</title>
+<meta name="description" content="עמוד מקור המרכז את שפת העיצוב של אפליקציית טעמים: אלמנטים חוזרים, פלטת צבעים, וכל קבצי הגרפיקה המקוריים — לשימוש בבניית דף נחיתה באותה שפה.">
+<link rel="icon" href="assets/svg/TaamimLevelSymbol.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#FFC727; --gold-dark:#E5B323; --gold-stroke:#E6AA00; --gold-soft:#FFE393; --gold-card:#FFECB2; --gold-modal:#FFF3BF;
+  --slate:#37474F; --sky1:#A0D1FA; --sky2:#B7DBF9; --sky-band:#64B5F6;
+  --cream:#F9F3E7; --cloud-shade:#DCE8EF; --green:#4CB050; --red:#FF5353; --purple:#664FA1; --lilac:#ECE6F0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--slate);line-height:1.7}
+.hero{background:linear-gradient(180deg,var(--sky1),var(--sky2));padding:56px 20px 70px;text-align:center;position:relative;overflow:hidden}
+.hero img.cloud{position:absolute;opacity:.9;pointer-events:none}
+.hero img.logo{width:120px;background:#F2F1F7;border-radius:20px;padding:10px 14px}
+.hero h1{margin:18px 0 6px;font-size:2.1rem;font-weight:800;color:#2b3a41}
+.hero p.sub{max-width:640px;margin:0 auto;font-size:1.05rem;color:#3d4f57}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+section{margin:44px 0}
+h2{font-size:1.5rem;font-weight:800;border-bottom:4px solid var(--gold);display:inline-block;padding-bottom:4px;margin-bottom:14px}
+h3{font-size:1.15rem;margin:26px 0 6px}
+.note{color:#5c6b72;font-size:.95rem;margin-top:0}
+.card{background:#fff;border-radius:18px;padding:18px 20px;margin:12px 0;box-shadow:0 2px 0 rgba(55,71,79,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+figure{margin:0;background:#fff;border-radius:14px;padding:10px;text-align:center;box-shadow:0 2px 0 rgba(55,71,79,.08)}
+figure img{max-width:100%;height:80px;object-fit:contain}
+figcaption{font-size:.68rem;direction:ltr;word-break:break-all;color:#5c6b72;margin-top:6px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sw{border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 2px 0 rgba(55,71,79,.08)}
+.sw .c{height:56px}
+.sw .t{padding:6px 10px;font-size:.8rem}
+.sw code{direction:ltr;display:block;font-size:.75rem;color:#5c6b72}
+.screens{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.screens figure img{height:300px;border-radius:10px}
+.screens figcaption{font-size:.8rem;direction:rtl;text-align:right}
+.tag{display:inline-block;background:var(--gold-soft);border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:700;margin:2px}
+.obs{background:#e9f5e9;border-radius:8px;padding:2px 10px;font-size:.75rem;font-weight:700;color:#2e6b2e}
+.prop{background:var(--lilac);border-radius:8px;padding:2px 10px;font-size:.75rem;font-weight:700;color:#4a3f6b}
+ul.tight li{margin:8px 0}
+code.inline{background:#eee5c8;border-radius:6px;padding:1px 7px;direction:ltr;display:inline-block}
+footer{margin:50px 0 30px;text-align:center;color:#7a8890;font-size:.85rem}
+a{color:#7a5c00}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="cloud" src="assets/svg/Cloud3.svg" style="top:18px;right:6%;width:150px">
+  <img class="cloud" src="assets/svg/Cloud7.svg" style="bottom:10px;left:5%;width:190px">
+  <img class="logo" src="assets/screens/logo-crop.png" alt="לוגו טעמים">
+  <h1>שפת העיצוב של טעמים</h1>
+  <p class="sub">עמוד מקור שמרכז את האלמנטים החוזרים בעיצוב האפליקציה, עם כל קבצי הגרפיקה המקוריים וצילומי מסך — כדי שאפשר יהיה לבנות ממנה דף נחיתה (למשל עם Claude Code) באותה שפה בדיוק.</p>
+</header>
+<main class="wrap">
+
+<section id="contents">
+<h2>מה יש כאן</h2>
+<div class="card">
+<ul class="tight">
+<li><strong>99 קבצי SVG מקוריים</strong> מתוך ארכיון הגרפיקות של האפליקציה — כולם מוצגים למטה וזמינים כקבצים נפרדים בריפו.</li>
+<li><strong>8 צילומי מסך</strong> מהאפליקציה (פרטים אישיים הושמטו) שמראים איך האלמנטים משתלבים בפועל.</li>
+<li><strong>פלטת צבעים</strong> שנמדדה מהקבצים ומהצילומים.</li>
+</ul>
+<p class="note">הורדה של כל הקבצים בבת אחת: <a href="https://github.com/taamim-audio/design-language/archive/refs/heads/main.zip">ZIP של הריפו</a> (כולל תיקיית <code class="inline">assets/svg/</code>).</p>
+</div>
+</section>
+
+<section id="elements">
+<h2>האלמנטים החוזרים <span class="obs">נצפה באפליקציה</span></h2>
+<div class="card">
+<ul class="tight">
+<li><strong>עולם שמיים ועננים.</strong> רקע מסכי המסלול הוא שמיים כחולים בהירים במעבר גוון עדין (בערך <code class="inline">#A0D1FA</code> עד <code class="inline">#B7DBF9</code>), ועליהם עננים לבנים מצוירים עם הצללה אפורה-כחלחלה (<code class="inline">#DCE8EF</code>). תשע וריאציות ענן קיימות בקבצים (Cloud1–Cloud9).</li>
+<li><strong>מגילות תורה זהובות ככפתורי שלבים.</strong> מסך הבית הוא מסלול זיגזג בעננים, וכל שלב הוא מגילה זהובה (<code class="inline">TorahUnlocked*.svg</code>) עם שם השלב; מגילה נעולה אפורה (<code class="inline">TorahLocked.svg</code>).</li>
+<li><strong>כפתורי "סקווירקל" זהובים.</strong> ריבועים מאוד מעוגלים בזהב <code class="inline">#FFC727</code> עם שוליים כהים <code class="inline">#E5B323</code> שיוצרים תחתית תלת-ממדית, וטקסט צורח <code class="inline">#37474F</code> במרכז. כך נראים כפתורי מצבי הלימוד (LevelBox*).</li>
+<li><strong>וי ירוק על שלב שהושלם.</strong> עיגול ירוק עם וי לבן מודבק על פינת הכפתור — מוסכמה חוזרת לסימון השלמה (LevelBox_PasukPasukCompleted).</li>
+<li><strong>מטבע הטעמים.</strong> עיגול זהב עם סמל נגינה (TaamimLevelSymbol) — משמש כנקודת פתיחה/מטבע במסלול.</li>
+<li><strong>סוכריה = נקודות.</strong> אייקון הסוכריות (CandyIcon) בצורח הוא מטבע הניקוד; מונה הנקודות מופיע כגלולת זהב. יש גם גלולת "רצף" (streak) עם להבה.</li>
+<li><strong>שלושה ייצוגים לאותו טעם.</strong> לכל טעם קיימים: קופסת זהב (Taamim/*Box), כדור זהב (TaamimBalls/*Ball), וסמל נקי בצורח ללא רקע (TaamimNoBackground/*). שמות הקבצים עקביים לפי שם הטעם.</li>
+<li><strong>כפתורי אייקון עגולים במתאר זהב.</strong> טבעת זהב <code class="inline">#E6AA00</code> ומילוי זהבבהר <code class="inline">#FFE393</code> — נגינה, השהיה, עין, מהירות, חצים.</li>
+<li><strong>כרטיס קריאה זהב-בהיר.</strong> טקסט התורה יושב על כרטיס ענק מעוגל <code class="inline">#FFECB2</code> מעל רקע שמנת; הטקסט שחור בגופן תנ"כי מסורתי עם ניקוד וטעמים.</li>
+<li><strong>שורת שליטה תחתונה צבעונית.</strong> נגינה ירוקה <code class="inline">#4CB050</code>, הקלטה אדומה <code class="inline">#FF5353</code> (עגולים), ניווט הבא/קודם כגלולות זהב/אפור; כפתור סיום הופך לירוק.</li>
+<li><strong>חלוניות קופצות בשני נוסחים.</strong> חלונית פעולה צהבהרה <code class="inline">#FFF3BF</code> עם כפתור ראשי צורח מלא וכפתור משני במתאר עם טקסט סגלגל <code class="inline">#664FA1</code>; חלונית בחירה בלילך <code class="inline">#ECE6F0</code> עם שדה חיפוש שמנת <code class="inline">#FFF8DE</code>.</li>
+<li><strong>תגי הישגים משושים.</strong> משושים צורחים עם מנעול (נעול) או גביע זהב (הושג) ותווית מתחת.</li>
+<li><strong>פס עליון קרמי עם אייקוני זהב.</strong> רקע בהיר <code class="inline">#F2F1F7</code>, אייקוני קו בזהב (הגדרות, מיקרופון, מכתב), ולוגו "טעמי״ם" זהב.</li>
+</ul>
+</div>
+</section>
+
+<section id="palette">
+<h2>פלטת צבעים</h2>
+<p class="note">נמדד מקובצי ה-SVG ומצילומי המסך. גוונים שנדגמו מצילומי JPEG הם קירוב של ±2.</p>
+<div class="swatches">
+<div class="sw"><div class="c" style="background:#FFC727"></div><div class="t">זהב ראשי<code>#FFC727</code></div></div>
+<div class="sw"><div class="c" style="background:#E5B323"></div><div class="t">זהב כהה / שוליים<code>#E5B323</code></div></div>
+<div class="sw"><div class="c" style="background:#E6AA00"></div><div class="t">קו מתאר זהב<code>#E6AA00</code></div></div>
+<div class="sw"><div class="c" style="background:#FFE393"></div><div class="t">מילוי זהב בהיר<code>#FFE393</code></div></div>
+<div class="sw"><div class="c" style="background:#FFECB2"></div><div class="t">כרטיס קריאה<code>#FFECB2</code></div></div>
+<div class="sw"><div class="c" style="background:#FFF3BF"></div><div class="t">חלונית פעולה<code>#FFF3BF</code></div></div>
+<div class="sw"><div class="c" style="background:#37474F"></div><div class="t">צורח: טקסט ואייקונים<code>#37474F</code></div></div>
+<div class="sw"><div class="c" style="background:#A0D1FA"></div><div class="t">שמים — גוון עליון<code>#A0D1FA</code></div></div>
+<div class="sw"><div class="c" style="background:#B7DBF9"></div><div class="t">שמים — גוון תחתון<code>#B7DBF9</code></div></div>
+<div class="sw"><div class="c" style="background:#64B5F6"></div><div class="t">רצועת שמים עמוקה<code>#64B5F6</code></div></div>
+<div class="sw"><div class="c" style="background:#DCE8EF"></div><div class="t">הצללת ענן<code>#DCE8EF</code></div></div>
+<div class="sw"><div class="c" style="background:#F9F3E7"></div><div class="t">רקע שמנת<code>#F9F3E7</code></div></div>
+<div class="sw"><div class="c" style="background:#F2F1F7"></div><div class="t">פס עליון<code>#F2F1F7</code></div></div>
+<div class="sw"><div class="c" style="background:#4CB050"></div><div class="t">ירוק פעולה<code>#4CB050</code></div></div>
+<div class="sw"><div class="c" style="background:#FF5353"></div><div class="t">אדום הקלטה<code>#FF5353</code></div></div>
+<div class="sw"><div class="c" style="background:#664FA1"></div><div class="t">סגול משני<code>#664FA1</code></div></div>
+<div class="sw"><div class="c" style="background:#ECE6F0"></div><div class="t">לילך חלונית בחירה<code>#ECE6F0</code></div></div>
+<div class="sw"><div class="c" style="background:#FFF8DE"></div><div class="t">שדה חיפוש שמנת<code>#FFF8DE</code></div></div>
+</div>
+</section>
+
+<section id="screens">
+<h2>איך זה נראה באפליקציה</h2>
+<p class="note">צילומי מסך שסופקו על ידי הצוות; שדות אישיים הושמטו מהצילומים של ההגדרות והמורה.</p>
+<div class="screens">
+<figure><img src="assets/screens/home.jpg" alt="מסך הבית"><figcaption><strong>מסך הבית:</strong> שמיים, עננים, מסלול מגילות זהב, מטבע טעמים, גלולת רצף עם להבה, פס עליון עם הלוגו.</figcaption></figure>
+<figure><img src="assets/screens/menu.jpg" alt="תפריט מצבים"><figcaption><strong>תפריט מצבי לימוד:</strong> כפתורי סקווירקל זהובים, וי ירוק על מצב שהושלם, רצועת שמים עמוקה יותר בתחתית.</figcaption></figure>
+<figure><img src="assets/screens/reading-card.jpg" alt="כרטיס קריאה"><figcaption><strong>כרטיס קריאה:</strong> כרטיס זהבבהר, טקסט תורה עם טעמים, כפתורי טבעת זהב, שורת שליטה ירוק/אדום/זהב.</figcaption></figure>
+<figure><img src="assets/screens/reading-card-full.jpg" alt="כרטיס קריאה מלא"><figcaption><strong>אותו כרטיס, מצב אחר:</strong> כפתור העין מסומן (הסתרה), כפתור "סיום" ירוק במקום "הבא".</figcaption></figure>
+<figure><img src="assets/screens/loading.jpg" alt="מסך טעינה"><figcaption><strong>טעינה:</strong> רקע שמנת, פס התקדמות דק עם מילוי סגול, כותרת שחורה בולטת וטקסט משני אפור.</figcaption></figure>
+<figure><img src="assets/screens/settings.jpg" alt="הגדרות"><figcaption><strong>הגדרות (ללא פרטים אישיים):</strong> תגי הישגים משושים צורחים, חלונית זהב-בהירה עם שורות ואייקונים צורחים עגולים.</figcaption></figure>
+<figure><img src="assets/screens/teacher-modal.jpg" alt="חלונית מורה"><figcaption><strong>חלונית פעולה:</strong> צהבהר, כפתור ראשי צורח מלא, כפתור משני במתאר עם טקסט סגול. (שם המורה הושמט.)</figcaption></figure>
+<figure><img src="assets/screens/nusach-modal.jpg" alt="בחירת נוסח"><figcaption><strong>חלונית בחירה:</strong> לילך, שדה חיפוש שמנת, רשימה עם קווי הפרדה דקים.</figcaption></figure>
+<figure><img src="assets/screens/feedback-annotation.jpg" alt="הערה על פסוק"><figcaption><strong>משוב על הקלטה:</strong> מילים עם הערה מסומנות בכתם כחלחל, חלונית צהבהרה קטנה, נגן עם דילוגים של 10 שניות.</figcaption></figure>
+</div>
+</section>
+
+<section id="typography">
+<h2>טיפוגרפיה <span class="obs">נצפה</span></h2>
+<div class="card">
+<ul class="tight">
+<li><strong>גופן הממשק:</strong> עברי מעוגל ושמן, עם מראה ידידותי ומשחקי — בכפתורים, בכותרות ובלוגו. <strong>קובץ הגופן לא נמסר בארכיון</strong>, ולכן אין כאן שם גופן מדויק.</li>
+<li><strong>גופן טקסט התורה:</strong> גופן תנ"כי מסורתי עם ניקוד וטעמים מלאים. גם הוא לא נמסר.</li>
+<li>גופן עמוד זה הוא Open Sans — בחירה של עמוד התיעוד בלבד, לא חלק משפת העיצוב של האפליקציה.</li>
+</ul>
+</div>
+</section>
+
+<section id="gallery">
+<h2>כל קבצי הגרפיקה</h2>
+<p class="note">כל הקבצים יושבים בריפו תחת <code class="inline">assets/svg/</code> — אפשר לקשר אליהם ישירות או להוריד את ה-ZIP למעלה. שמות הקבצים הם המקוריים מהארכיון.</p>
+<h3>אלמנטים כלליים</h3>
+<p class="note">מסך הבית, ניווט, שלבים, אייקוני מערכת — הקבצים שברמה הראשית של הארכיון.</p>
+<div class="grid">
+<figure><img loading="lazy" src="assets/svg/AnswerChoice.svg" alt="AnswerChoice.svg"><figcaption>AnswerChoice.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/AutoplayOff.svg" alt="AutoplayOff.svg"><figcaption>AutoplayOff.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/AutoplayOn.svg" alt="AutoplayOn.svg"><figcaption>AutoplayOn.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/BlankButton.svg" alt="BlankButton.svg"><figcaption>BlankButton.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/CandyIcon.svg" alt="CandyIcon.svg"><figcaption>CandyIcon.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud1.svg" alt="Cloud1.svg"><figcaption>Cloud1.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud2.svg" alt="Cloud2.svg"><figcaption>Cloud2.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud3.svg" alt="Cloud3.svg"><figcaption>Cloud3.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud4.svg" alt="Cloud4.svg"><figcaption>Cloud4.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud5.svg" alt="Cloud5.svg"><figcaption>Cloud5.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud6.svg" alt="Cloud6.svg"><figcaption>Cloud6.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud7.svg" alt="Cloud7.svg"><figcaption>Cloud7.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud8.svg" alt="Cloud8.svg"><figcaption>Cloud8.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Cloud9.svg" alt="Cloud9.svg"><figcaption>Cloud9.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/LevelBoxLocked.svg" alt="LevelBoxLocked.svg"><figcaption>LevelBoxLocked.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/LevelBoxUnlocked.svg" alt="LevelBoxUnlocked.svg"><figcaption>LevelBoxUnlocked.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/LevelBox_PasukPasukCompleted.svg" alt="LevelBox_PasukPasukCompleted.svg"><figcaption>LevelBox_PasukPasukCompleted.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/MaftirVeHaftara.svg" alt="MaftirVeHaftara.svg"><figcaption>MaftirVeHaftara.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/NextArrowGolden.svg" alt="NextArrowGolden.svg"><figcaption>NextArrowGolden.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/NotVisibleButton.svg" alt="NotVisibleButton.svg"><figcaption>NotVisibleButton.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/PauseButton.svg" alt="PauseButton.svg"><figcaption>PauseButton.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/PlayButton.svg" alt="PlayButton.svg"><figcaption>PlayButton.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/PreviousArrowGolden.svg" alt="PreviousArrowGolden.svg"><figcaption>PreviousArrowGolden.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/QuestionFrame.svg" alt="QuestionFrame.svg"><figcaption>QuestionFrame.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimLevelSymbol.svg" alt="TaamimLevelSymbol.svg"><figcaption>TaamimLevelSymbol.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TorahLocked.svg" alt="TorahLocked.svg"><figcaption>TorahLocked.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TorahUnlocked.svg" alt="TorahUnlocked.svg"><figcaption>TorahUnlocked.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TorahUnlockedV2.svg" alt="TorahUnlockedV2.svg"><figcaption>TorahUnlockedV2.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TorahUnlocked_ShlishiWithProgreeBar.svg" alt="TorahUnlocked_ShlishiWithProgreeBar.svg"><figcaption>TorahUnlocked_ShlishiWithProgreeBar.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/VisibleButton.svg" alt="VisibleButton.svg"><figcaption>VisibleButton.svg</figcaption></figure>
+</div>
+<h3>קופסאות הטעמים</h3>
+<p class="note">קופסת זהב עם סמל הטעם בצורח — ייצוג הטעם כפריט שניתן לבחירה/גרירה.</p>
+<div class="grid">
+<figure><img loading="lazy" src="assets/svg/Taamim/AzlaGereshBox.svg" alt="AzlaGereshBox.svg"><figcaption>AzlaGereshBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/DargaBox.svg" alt="DargaBox.svg"><figcaption>DargaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/EntanchtaBox.svg" alt="EntanchtaBox.svg"><figcaption>EntanchtaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/GershayimBox.svg" alt="GershayimBox.svg"><figcaption>GershayimBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/KadmaVeAzlaBox.svg" alt="KadmaVeAzlaBox.svg"><figcaption>KadmaVeAzlaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/KarneiParaBox.svg" alt="KarneiParaBox.svg"><figcaption>KarneiParaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/MahapachBox.svg" alt="MahapachBox.svg"><figcaption>MahapachBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/MerchaBox.svg" alt="MerchaBox.svg"><figcaption>MerchaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/MerchaKfulaBox.svg" alt="MerchaKfulaBox.svg"><figcaption>MerchaKfulaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/MunachBox.svg" alt="MunachBox.svg"><figcaption>MunachBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/P%27sikBox.svg" alt="P'sikBox.svg"><figcaption>P'sikBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/Pashtabox.svg" alt="Pashtabox.svg"><figcaption>Pashtabox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/PazerBox.svg" alt="PazerBox.svg"><figcaption>PazerBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/Revi%27iBox.svg" alt="Revi'iBox.svg"><figcaption>Revi'iBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/SegolBox.svg" alt="SegolBox.svg"><figcaption>SegolBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/ShalsheletBox.svg" alt="ShalsheletBox.svg"><figcaption>ShalsheletBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/SofPasukBox.svg" alt="SofPasukBox.svg"><figcaption>SofPasukBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/T%27virBox.svg" alt="T'virBox.svg"><figcaption>T'virBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/TelishaGdolaBox.svg" alt="TelishaGdolaBox.svg"><figcaption>TelishaGdolaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/TelishaKtanaBox.svg" alt="TelishaKtanaBox.svg"><figcaption>TelishaKtanaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/TipchaBox.svg" alt="TipchaBox.svg"><figcaption>TipchaBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/YerachBenYomoBox.svg" alt="YerachBenYomoBox.svg"><figcaption>YerachBenYomoBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/YetivBox.svg" alt="YetivBox.svg"><figcaption>YetivBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/ZakefGadolBox.svg" alt="ZakefGadolBox.svg"><figcaption>ZakefGadolBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/ZakefKatonBox.svg" alt="ZakefKatonBox.svg"><figcaption>ZakefKatonBox.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/Taamim/ZarkaBox.svg" alt="ZarkaBox.svg"><figcaption>ZarkaBox.svg</figcaption></figure>
+</div>
+<h3>כדורי הטעמים</h3>
+<p class="note">אותו רעיון בצורת כדור זהב — וריאנט משחקי של אותו אוצר סמלים.</p>
+<div class="grid">
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/AzlaGereshBall.svg" alt="AzlaGereshBall.svg"><figcaption>AzlaGereshBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/DargaBall.svg" alt="DargaBall.svg"><figcaption>DargaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/EtnachtaBall.svg" alt="EtnachtaBall.svg"><figcaption>EtnachtaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/GeshayimBall.svg" alt="GeshayimBall.svg"><figcaption>GeshayimBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/KadmaVeAzlaBall.svg" alt="KadmaVeAzlaBall.svg"><figcaption>KadmaVeAzlaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/KarneiParaBall.svg" alt="KarneiParaBall.svg"><figcaption>KarneiParaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MahapachPashtaBall.svg" alt="MahapachPashtaBall.svg"><figcaption>MahapachPashtaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MerchaBall.svg" alt="MerchaBall.svg"><figcaption>MerchaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MerchaKfulaBall.svg" alt="MerchaKfulaBall.svg"><figcaption>MerchaKfulaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MerchaTipchaBall.svg" alt="MerchaTipchaBall.svg"><figcaption>MerchaTipchaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MunachBall.svg" alt="MunachBall.svg"><figcaption>MunachBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/MunachZarkaMunachSegolBall.svg" alt="MunachZarkaMunachSegolBall.svg"><figcaption>MunachZarkaMunachSegolBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/PashtaBall.svg" alt="PashtaBall.svg"><figcaption>PashtaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/PazerBall.svg" alt="PazerBall.svg"><figcaption>PazerBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/Revi%27iBall.svg" alt="Revi'iBall.svg"><figcaption>Revi'iBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/ShalsheletBall.svg" alt="ShalsheletBall.svg"><figcaption>ShalsheletBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/SofPasukBall.svg" alt="SofPasukBall.svg"><figcaption>SofPasukBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/T%27virBall.svg" alt="T'virBall.svg"><figcaption>T'virBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/TelishaGdolaBall.svg" alt="TelishaGdolaBall.svg"><figcaption>TelishaGdolaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/TelishaKtanaBall.svg" alt="TelishaKtanaBall.svg"><figcaption>TelishaKtanaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/TipchaBall.svg" alt="TipchaBall.svg"><figcaption>TipchaBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/YerachBenYomoBall.svg" alt="YerachBenYomoBall.svg"><figcaption>YerachBenYomoBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/YetivBall.svg" alt="YetivBall.svg"><figcaption>YetivBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/ZakefGadolBall.svg" alt="ZakefGadolBall.svg"><figcaption>ZakefGadolBall.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimBalls/ZakefKatonBall.svg" alt="ZakefKatonBall.svg"><figcaption>ZakefKatonBall.svg</figcaption></figure>
+</div>
+<h3>סמלי טעמים נקיים</h3>
+<p class="note">סמל הטעם לבו בצורח, בלי קופסה — לשילוב על רקעים וטקסט.</p>
+<div class="grid">
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/AzlaGereshNoBackground.svg" alt="AzlaGereshNoBackground.svg"><figcaption>AzlaGereshNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/DargaNoBackground.svg" alt="DargaNoBackground.svg"><figcaption>DargaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/GershayimNoBackground.svg" alt="GershayimNoBackground.svg"><figcaption>GershayimNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/KadmaVeAzlaNoBackground.svg" alt="KadmaVeAzlaNoBackground.svg"><figcaption>KadmaVeAzlaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/MahapachPashtaNoBackground.svg" alt="MahapachPashtaNoBackground.svg"><figcaption>MahapachPashtaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/MerchaTipchaNoBackground.svg" alt="MerchaTipchaNoBackground.svg"><figcaption>MerchaTipchaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/MunachEtnachtaNoBackground.svg" alt="MunachEtnachtaNoBackground.svg"><figcaption>MunachEtnachtaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/PashtaNoBackground.svg" alt="PashtaNoBackground.svg"><figcaption>PashtaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/PazerNoBackground.svg" alt="PazerNoBackground.svg"><figcaption>PazerNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/Revi%27iNoBackground.svg" alt="Revi'iNoBackground.svg"><figcaption>Revi'iNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/SofPasukNoBackground.svg" alt="SofPasukNoBackground.svg"><figcaption>SofPasukNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/TlishaGdolaNoBackground.svg" alt="TlishaGdolaNoBackground.svg"><figcaption>TlishaGdolaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/TlishaKtanaNoBackground.svg" alt="TlishaKtanaNoBackground.svg"><figcaption>TlishaKtanaNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/TvirNoBackground.svg" alt="TvirNoBackground.svg"><figcaption>TvirNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/YetivNoBackground.svg" alt="YetivNoBackground.svg"><figcaption>YetivNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/ZakefGadolNoBackground.svg" alt="ZakefGadolNoBackground.svg"><figcaption>ZakefGadolNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/ZakefKatonNoBackground.svg" alt="ZakefKatonNoBackground.svg"><figcaption>ZakefKatonNoBackground.svg</figcaption></figure>
+<figure><img loading="lazy" src="assets/svg/TaamimNoBackground/ZarkaSegolNoBackground.svg" alt="ZarkaSegolNoBackground.svg"><figcaption>ZarkaSegolNoBackground.svg</figcaption></figure>
+</div>
+</section>
+
+<section id="landing">
+<h2>מהארכיון לדף נחיתה <span class="prop">הצעות — לא נצפו באפליקציה</span></h2>
+<div class="card">
+<ul class="tight">
+<li><strong>Hero:</strong> רקע שמיים עם 2–3 עננים מהקבצים, לוגו, כותרת וכפתור פעולה ראשי בצורת מגילה זהובה או סקווירקל זהב.</li>
+<li><strong>יתרונות/פיצ'רים:</strong> כרטיסים על בסיס צורת הסקווירקל או הכרטיס הזהב-בהיר, עם כדורי הטעמים כאייקונים.</li>
+<li><strong>התקדמות/גמיפיקציה:</strong> להשתמש במטבע הטעמים, בסוכריית הנקודות ובווי הירוק כמוטיבים של הישג.</li>
+<li><strong>היררכיית כפתורים:</strong> ראשי זהב מלא, שני במתאר זהב, הזהרה/הקלטה באדום, אישור סופי בירוק.</li>
+<li><strong>גופן:</strong> לקירוב ויזואלי של הממשק אפשר לנסות גופן עברי מעוגל חופשי (למשל Varela Round מ-Google Fonts) — זו השערה בלבד, וכדאי לוודא מול הצוות מה הגופן המקורי.</li>
+<li><strong>כיווניות:</strong> הכל עברית RTL מהיסוד, גם בדף הנחיתה.</li>
+</ul>
+</div>
+</section>
+
+<section id="notes">
+<h2>הערות ליישום</h2>
+<div class="card">
+<ul class="tight">
+<li>המבנה בריפו: <code class="inline">assets/svg/</code> (הגרפיקות), <code class="inline">assets/screens/</code> (הצילומים), <code class="inline">index.html</code> (עמוד זה).</li>
+<li>שמות הקבצים מקוריים וכוללים גרש בודד (למשל <code class="inline">P'sikBox.svg</code>) — בקישורי HTML יש לקודד אותו כ-<code class="inline">%27</code>.</li>
+<li>חלק מה-SVG נחתכו במקור ב-clipPath פנימי; הם מוצגים תקין כ-<code class="inline">&lt;img&gt;</code>, אבל לעריכה וקטורית כדאי לפתוח בעורך.</li>
+<li>מה שלא קיים בארכיון: קובץ גופן, קובץ לוגו נפרד (הלוגו כאן הוא חיתוך מצילום מסך), וגרפיקת היד/מנחה — אין להמציא אותם.</li>
+</ul>
+</div>
+</section>
+
+</main>
+<footer>
+נבנה עבור צוות טעמים · כל הקבצים זמינים ב-<a href="https://github.com/taamim-audio/design-language">ריפו הציבורי</a>
+</footer>
+</body>
+</html>
