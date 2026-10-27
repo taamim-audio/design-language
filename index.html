@@ -6,9 +6,6 @@
 <title>שפת העיצוב של טעמים — מקור לבניית דף נחיתה</title>
 <meta name="description" content="עמוד מקור המרכז את שפת העיצוב של אפליקציית טעמים: אלמנטים חוזרים, פלטת צבעים, וכל קבצי הגרפיקה המקוריים — לשימוש בבניית דף נחיתה באותה שפה.">
 <link rel="icon" href="assets/svg/TaamimLevelSymbol.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --gold:#FFC727; --gold-dark:#E5B323; --gold-stroke:#E6AA00; --gold-soft:#FFE393; --gold-card:#FFECB2; --gold-modal:#FFF3BF;
@@ -16,7 +13,7 @@
   --cream:#F9F3E7; --cloud-shade:#DCE8EF; --green:#4CB050; --red:#FF5353; --purple:#664FA1; --lilac:#ECE6F0;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--slate);line-height:1.7}
+body{margin:0;font-family:Calibri,'Segoe UI',Arial,'Noto Sans Hebrew',sans-serif;background:var(--cream);color:var(--slate);line-height:1.7}
 .hero{background:linear-gradient(180deg,var(--sky1),var(--sky2));padding:56px 20px 70px;text-align:center;position:relative;overflow:hidden}
 .hero img.cloud{position:absolute;opacity:.9;pointer-events:none}
 .hero img.logo{width:120px;background:#F2F1F7;border-radius:20px;padding:10px 14px}
@@ -137,9 +134,10 @@ a{color:#7a5c00}
 <h2>טיפוגרפיה <span class="obs">נצפה</span></h2>
 <div class="card">
 <ul class="tight">
-<li><strong>גופן הממשק:</strong> עברי מעוגל ושמן, עם מראה ידידותי ומשחקי — בכפתורים, בכותרות ובלוגו. <strong>קובץ הגופן לא נמסר בארכיון</strong>, ולכן אין כאן שם גופן מדויק.</li>
-<li><strong>גופן טקסט התורה:</strong> גופן תנ"כי מסורתי עם ניקוד וטעמים מלאים. גם הוא לא נמסר.</li>
-<li>גופן עמוד זה הוא Open Sans — בחירה של עמוד התיעוד בלבד, לא חלק משפת העיצוב של האפליקציה.</li>
+<li><strong>הגופנים באפליקציה (כפי שאישר בעל האפליקציה, שמות מדויקים כפי שנמסרו):</strong> <code class="inline">calibri</code>, <code class="inline">calibrib</code>, <code class="inline">Shlomo SemiStam</code>, <code class="inline">Shlomo Stam</code>.</li>
+<li><strong>קבצי הגופן עצמם לא נמסרו בארכיון</strong> — ידועים השמות בלבד. גופני Shlomo הם בדרך כלל גופנים ברישיון מסחרי; יש לקבל את הקבצים או רישיון מהצוות לפני שימוש מחוץ לאפליקציה.</li>
+<li><strong>חלוקת התפקידים בין הגופנים לא אומתה:</strong> לא צוין איזה גופן מופיע היכן באפליקציה. השערה בלבד, דורשת אימות מול הצוות: Calibri לטקסט ממשק, <code class="inline">calibrib</code> כנראה הווריאנט המודגש (Bold) של Calibri, וגופני Shlomo Stam / Shlomo SemiStam לטקסט התורה בסגנון כתב סת"ם.</li>
+<li>גופן עמוד זה הוא Calibri — בהתאם לבקשת בעל האפליקציה ובהתאמה לגופן הממשק.</li>
 </ul>
 </div>
 </section>
@@ -272,7 +270,7 @@ a{color:#7a5c00}
 <li><strong>יתרונות/פיצ'רים:</strong> כרטיסים על בסיס צורת הסקווירקל או הכרטיס הזהב-בהיר, עם כדורי הטעמים כאייקונים.</li>
 <li><strong>התקדמות/גמיפיקציה:</strong> להשתמש במטבע הטעמים, בסוכריית הנקודות ובווי הירוק כמוטיבים של הישג.</li>
 <li><strong>היררכיית כפתורים:</strong> ראשי זהב מלא, שני במתאר זהב, הזהרה/הקלטה באדום, אישור סופי בירוק.</li>
-<li><strong>גופן:</strong> לקירוב ויזואלי של הממשק אפשר לנסות גופן עברי מעוגל חופשי (למשל Varela Round מ-Google Fonts) — זו השערה בלבד, וכדאי לוודא מול הצוות מה הגופן המקורי.</li>
+<li><strong>גופן:</strong> להשתמש ב-Calibri — זה הגופן שאושר על ידי בעל האפליקציה לטקסט רגיל (רשימת הגופנים המלאה והאזהרות בסעיף הטיפוגרפיה למעלה). Calibri הוא גופן מערכת ברוב המחשבים, ולכן לא נדרש רכש; גופני Shlomo דורשים קבצים/רישיון מהצוות.</li>
 <li><strong>כיווניות:</strong> הכל עברית RTL מהיסוד, גם בדף הנחיתה.</li>
 </ul>
 </div>
@@ -285,7 +283,7 @@ a{color:#7a5c00}
 <li>המבנה בריפו: <code class="inline">assets/svg/</code> (הגרפיקות), <code class="inline">assets/screens/</code> (הצילומים), <code class="inline">index.html</code> (עמוד זה).</li>
 <li>שמות הקבצים מקוריים וכוללים גרש בודד (למשל <code class="inline">P'sikBox.svg</code>) — בקישורי HTML יש לקודד אותו כ-<code class="inline">%27</code>.</li>
 <li>חלק מה-SVG נחתכו במקור ב-clipPath פנימי; הם מוצגים תקין כ-<code class="inline">&lt;img&gt;</code>, אבל לעריכה וקטורית כדאי לפתוח בעורך.</li>
-<li>מה שלא קיים בארכיון: קובץ גופן, קובץ לוגו נפרד (הלוגו כאן הוא חיתוך מצילום מסך), וגרפיקת היד/מנחה — אין להמציא אותם.</li>
+<li>מה שלא קיים בארכיון: קובצי הגופן עצמם (השמות ידועים — ראו סעיף הטיפוגרפיה), קובץ לוגו נפרד (הלוגו כאן הוא חיתוך מצילום מסך), וגרפיקת היד/מנחה — אין להמציא אותם.</li>
 </ul>
 </div>
 </section>
